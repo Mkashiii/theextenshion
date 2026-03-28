@@ -101,7 +101,7 @@ function renderOverview(d,score,issues){
   if($('indexBadge')){const s=d.isNoindex?'error':'ok';$('indexBadge').innerHTML=`<span class="badge-pill ${s}"><span class="badge-check">${d.isNoindex?'✗':'✓'}</span> ${d.isNoindex?'Noindex':'Indexed'}</span>`;const idxRow=$('indexBadge').closest('.seo-row');if(idxRow){idxRow.classList.remove('row-ok','row-warn','row-error');idxRow.classList.add('row-'+(d.isNoindex?'error':'ok'));}}
   if($('canonicalVal')){$('canonicalVal').textContent=d.canonical||'Not set';const canRow=$('canonicalVal').closest('.seo-row');if(canRow){canRow.classList.remove('row-ok','row-warn','row-error');canRow.classList.add('row-'+(d.canonical?'ok':'warn'));}}
   if($('robotsVal')){$('robotsVal').textContent=d.robots||'index, follow (default)';const rRow=$('robotsVal').closest('.seo-row');if(rRow){rRow.classList.remove('row-ok','row-warn','row-error');rRow.classList.add(d.isNoindex?'row-error':'row-ok');}}
-  if($('kwVal'))$('kwVal').textContent=d.keywords||'(not set)';
+  if($('kwVal')){if(d.keywords){$('kwVal').textContent=d.keywords;}else{const kwRow=document.getElementById('row-keywords');if(kwRow)kwRow.style.display='none';}}
   if($('wcVal')){$('wcVal').textContent=`${d.wordCount.toLocaleString()} words`;const wcRow=$('wcVal').closest('.seo-row');if(wcRow){wcRow.classList.remove('row-ok','row-warn','row-error');wcRow.classList.add(d.wordCount>=300?'row-ok':'row-warn');}}
   if($('langVal')){$('langVal').textContent=d.lang||'Not set';const lRow=$('langVal').closest('.seo-row');if(lRow){lRow.classList.remove('row-ok','row-warn','row-error');lRow.classList.add(d.lang?'row-ok':'row-warn');}}
   const counts={1:0,2:0,3:0,4:0};
