@@ -506,6 +506,13 @@
           <div class="seo-row small"><div class="seo-row-icon purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div><div class="seo-row-body"><div class="seo-row-title-wrap"><div class="seo-row-title">Word Count</div><span class="seo-info-icon" title="Aim for 300+ words for better ranking">?</span></div><div class="seo-row-val" id="wcVal">—</div></div></div>
           <div class="seo-row small"><div class="seo-row-icon purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="seo-row-body"><div class="seo-row-title-wrap"><div class="seo-row-title">Language</div><span class="seo-info-icon" title="lang attribute on html element">?</span></div><div class="seo-row-val" id="langVal">—</div></div></div>
         </div>
+        <div class="seo-two-col">
+          <div class="seo-row small" id="row-robots"><div class="seo-row-icon purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="seo-row-body"><div class="seo-row-title-wrap"><div class="seo-row-title">Meta Robots</div><span class="seo-info-icon" title="Controls search engine indexing">?</span></div><div class="seo-row-val" id="robotsVal">—</div></div></div>
+          <div class="seo-row small" id="row-xrobots"><div class="seo-row-icon purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="seo-row-body"><div class="seo-row-title-wrap"><div class="seo-row-title">X-Robots Tag</div><span class="seo-info-icon" title="HTTP header robots directive">?</span></div><div class="seo-row-val" id="xrobotVal">—</div></div></div>
+        </div>
+        <div class="seo-two-col">
+          <div class="seo-row small" id="row-keywords"><div class="seo-row-icon purple"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2H3v16h5v4l4-4h9V2z"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="14" y2="12"/></svg></div><div class="seo-row-body"><div class="seo-row-title-wrap"><div class="seo-row-title">Meta Keywords</div><span class="seo-info-icon" title="Legacy keyword meta tag">?</span></div><div class="seo-row-val" id="kwVal">—</div></div></div>
+        </div>
 
         <div class="seo-divider"></div>
 
@@ -1141,6 +1148,51 @@
         ],
         learnMore: 'https://7thclub.com/mastering-canonical-tags/',
         learnLabel: 'Canonical Tag Guide',
+      },
+      'row-robots': {
+        icon: '🤖',
+        title: 'Meta Robots Tag',
+        subtitle: 'Controls search engine indexing',
+        desc: 'The meta robots tag tells search engines whether to index a page and follow its links. It is one of the most powerful on-page directives for crawl control.',
+        best: '✅ Best: index, follow (default — no tag needed)',
+        tips: [
+          'Default behavior is index, follow',
+          '"noindex" prevents Google from showing the page',
+          '"nofollow" stops PageRank passing through links',
+          'Never set noindex on important pages accidentally',
+        ],
+        learnMore: 'https://7thclub.com/mastering-the-meta-robots-tag/',
+        learnLabel: 'Meta Robots Tag Guide',
+      },
+      'row-xrobots': {
+        icon: '🔒',
+        title: 'X-Robots-Tag',
+        subtitle: 'HTTP header robots directive',
+        desc: 'The X-Robots-Tag is an HTTP response header that works like the meta robots tag but can be applied to any file type, including PDFs and images.',
+        best: '✅ Best: Not set (default index, follow)',
+        tips: [
+          'Works for non-HTML files such as PDFs and images',
+          'Set by your server or CMS configuration',
+          'Overrides meta robots in some cases',
+          'Use to control indexing of downloadable files',
+        ],
+        learnMore: 'https://7thclub.com/the-x-robots-tag/',
+        learnLabel: 'X-Robots-Tag Guide',
+      },
+      'row-keywords': {
+        icon: '🔑',
+        title: 'Meta Keywords',
+        subtitle: 'Legacy keyword meta tag',
+        desc: 'The meta keywords tag was once used by search engines to understand page topics, but Google has ignored it since 2009. It is now obsolete for SEO.',
+        best: '⚠️ Best: Leave empty — Google ignores it',
+        tips: [
+          'Google has officially ignored this since 2009',
+          'Filling it can tip off competitors to your keywords',
+          'Bing still reads it but gives it very low weight',
+          'Safe to leave blank or remove entirely',
+        ],
+        learnMore: 'https://7thclub.com/meta-keywords/',
+        learnLabel: 'Meta Keywords Guide',
       },
     };
   
